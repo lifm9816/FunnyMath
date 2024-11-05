@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "272232587830",
+    "project_id": "login-58af1",
+    "storage_bucket": "login-58af1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272232587830:android:e4120b166e4fdc9baeae97",
+        "android_client_info": {
+          "package_name": "com.example.funnymath_Luis_Ignacio_Flores_Martinez"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi4rLUtAWfreHwZAvmFGg06hMHTVJuOwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272232587830:android:df06e2b51b88ed64aeae97",
+        "android_client_info": {
+          "package_name": "com.example.login"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi4rLUtAWfreHwZAvmFGg06hMHTVJuOwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

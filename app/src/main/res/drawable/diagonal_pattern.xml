@@ -1,0 +1,7 @@
+<!-- res/drawable/diagonal_pattern.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <size android:width="40dp" android:height="40dp" />
+    <bitmap
+        android:src="@drawable/diagonal_stripe"
+        android:tileMode="repeat" />
+</shape>

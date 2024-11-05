@@ -1,0 +1,14 @@
+<!-- res/drawable/diagonal_stripes.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:left="0dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="45"
+                android:startColor="#7ed957"
+                android:endColor="#1f3f66"
+                android:type="linear"
+                android:centerColor="#7ed957"
+                android:centerX="0.25" />
+        </shape>
+    </item>
+</layer-list>
