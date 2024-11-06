@@ -2,7 +2,7 @@
     <!-- Fondo de la barra de progreso -->
     <item android:id="@android:id/background">
         <shape android:shape="rectangle">
-            <solid android:color="#B1B1AF" />
+            <solid android:color="#080C12" />
             <corners android:radius="8dp" />
         </shape>
     </item>
@@ -13,7 +13,7 @@
             <shape android:shape="rectangle">
                 <gradient
                     android:startColor="#B8C223"
-                    android:endColor="#103548"
+                    android:endColor="#B7C226"
                     android:angle="45" />
                 <corners android:radius="8dp" />
                 <size android:height="40dp" /> <!-- Altura mínima -->
