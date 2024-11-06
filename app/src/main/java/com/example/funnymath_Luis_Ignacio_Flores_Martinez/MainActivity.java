@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 // Navega a la siguiente actividad después de la carga
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                Intent intent = new Intent(MainActivity.this, Login.class);
                 startActivity(intent);
                 finish();
             }
