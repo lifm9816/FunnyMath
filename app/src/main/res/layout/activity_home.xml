@@ -5,38 +5,52 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#080C12"
+    android:background="@drawable/funnymath_menu"
     tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/mathy_d"
+        android:layout_width="380dp"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
 
     <LinearLayout
         android:layout_width="280dp"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical">
+        app:layout_constraintVertical_bias="0.843">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
             android:text="Bienvenido a FunnyMath!"
-            android:textColor="@color/green"
-            android:textStyle="bold"
             android:textAlignment="center"
+            android:textColor="@color/green"
             android:textSize="35dp"
-            android:layout_marginBottom="30dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:text="Este es el menú principal
-            
+
             Aquí podrás acceder a los distintos niveles de factorización conforme vayas avanzando"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:layout_marginBottom="10dp"/>
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -51,17 +65,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="25dp"
-                    android:textSize="25dp"
+                    android:backgroundTint="@color/green"
                     android:text="Factor común"
-                    android:backgroundTint="@color/green"/>
+                    android:textSize="25dp" />
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="25dp"
+                    android:backgroundTint="#1E3E62"
                     android:text="Diferencia de cuadrados"
-                    android:backgroundTint="#1E3E62"/>
+                    android:textSize="25dp" />
 
                 <Button
                     android:layout_width="match_parent"
