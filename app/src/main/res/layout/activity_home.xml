@@ -10,14 +10,14 @@
 
     <ImageView
         android:id="@+id/mathy_d"
-        android:layout_width="380dp"
-        android:layout_height="350dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.24" />
 
     <LinearLayout
         android:layout_width="280dp"
@@ -39,18 +39,6 @@
             android:textColor="@color/green"
             android:textSize="35dp"
             android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="Este es el menú principal
-
-            Aquí podrás acceder a los distintos niveles de factorización conforme vayas avanzando"
-            android:textAlignment="center"
-            android:background="@color/white"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
 
         <ScrollView
             android:layout_width="match_parent"
