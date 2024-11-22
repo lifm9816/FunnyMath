@@ -5,13 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/funnymath_menu"
+    android:background="#091521"
     tools:context=".HomeActivity">
 
-    <ImageView
+    <View
         android:id="@+id/mathy_d"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:background="@drawable/mathy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"

@@ -9,24 +9,20 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class HomeActivity extends AppCompatActivity {
+import com.example.funnymath_Luis_Ignacio_Flores_Martinez.databinding.ActivityHomeBinding;
 
-    ImageView mathy_d;
+public class HomeActivity extends BottomMenu {
+
+    ActivityHomeBinding activityHomeBinding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_home);
 
-        mathy_d = findViewById(R.id.mathy_d);
 
-        mathy_d.setImageResource(R.drawable.mathy);
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        activityHomeBinding = activityHomeBinding.inflate(getLayoutInflater());
+        setContentView(activityHomeBinding.getRoot());
     }
 }
