@@ -15,21 +15,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="40dp"
             android:text="Ingresa tu información"
             android:textAlignment="center"
             android:textColor="@color/green"
             android:textSize="35dp"
             android:textStyle="bold" />
 
+        <ImageButton
+            android:id="@+id/photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/defuser"/>
+
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="350dp">
+            android:layout_height="250dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -108,7 +117,7 @@
             android:id="@+id/create_btn"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/green"
             android:text="Crear cuenta"
             android:textSize="25dp" />

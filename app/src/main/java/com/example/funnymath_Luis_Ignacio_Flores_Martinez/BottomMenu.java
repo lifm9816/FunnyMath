@@ -39,6 +39,8 @@ public class BottomMenu extends AppCompatActivity {
                 if(itemId == R.id.nav_home){
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.main_container, new Home());
+                    fragmentTransaction.commit();
                 }else if(itemId == R.id.nav_learning){
 
                 }else if(itemId == R.id.nav_account){
