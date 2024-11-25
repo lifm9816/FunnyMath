@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -30,29 +31,42 @@ public class BottomMenu extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         frameLayout = findViewById(R.id.main_container);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 int itemId = item.getItemId();
 
-                if(itemId == R.id.nav_home){
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.add(R.id.main_container, new Home());
-                    fragmentTransaction.commit();
-                }else if(itemId == R.id.nav_learning){
-
-                }else if(itemId == R.id.nav_account){
-
-                }else if(itemId == R.id.nav_settings){
-
-                }else if(itemId == R.id.nav_info){
-
+                if (itemId == R.id.nav_home) {
+                    loadFragment(new Home(), true);
+                } else if (itemId == R.id.nav_learning) {
+                    loadFragment(new Learning(), true);
+                } else if (itemId == R.id.nav_account) {
+                    loadFragment(new Account(), true);
+                } else if (itemId == R.id.nav_settings) {
+                    loadFragment(new Settings(), true);
+                } else if (itemId == R.id.nav_info) {
+                    loadFragment(new About(), true);
                 }
 
-                return false;
+                // Ya no es necesario llamar a setSelectedItemId() aquí
+
+                return true;
             }
         });
+
+        loadFragment(new Home(), true);
+    }
+
+    private void loadFragment(Fragment fragment, boolean isAppInitialized){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        if(isAppInitialized){
+            fragmentTransaction.replace(R.id.main_container, fragment);
+        }else{
+            fragmentTransaction.add(R.id.main_container, fragment);
+        }
+        fragmentTransaction.commit();
     }
 }

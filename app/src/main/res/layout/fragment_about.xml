@@ -5,10 +5,82 @@
     android:layout_height="match_parent"
     tools:context=".About">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sobre la aplicación"
+                android:textColor="@color/green"
+                android:textSize="32sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desarrolladores"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/green"
+                android:layout_marginTop="5dp"/>
+
+            <ImageView
+                android:layout_width="220dp"
+                android:layout_height="290dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/luis"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Luis Ignacio Flores Martínez"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="7dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="iOS and React Developer"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="7dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="luis.flores110@uppuebla.edu.mx"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="7dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="221 914 6158"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="7dp"/>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>
