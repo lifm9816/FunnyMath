@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue"
-    tools:context=".Common_factor">
+    tools:context=".Difference_squares">
 
     <include
         android:id="@+id/floating_menu"
@@ -18,11 +18,9 @@
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="Factor común"
+        android:text="Diferencia de cuadrados"
         android:textColor="@color/green"
         android:textSize="35sp"
         android:textStyle="bold" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

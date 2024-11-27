@@ -8,13 +8,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Common_factor extends Floating_button {
+public class Difference_squares extends Floating_button {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_common_factor);
+        setContentView(R.layout.activity_difference_squares);
 
-        configureMenu2(R.drawable.explaning, Common_factor.class);
+        configureMenu2(R.drawable.evaluating, Difference_squares.class);
     }
 }

@@ -25,6 +25,8 @@ public class Learning extends Fragment {
 
         common_factor.setOnClickListener(v -> goSection(Common_factor.class));
 
+        difference_squares.setOnClickListener(v -> goSection(Floating_button.class));
+
         return view;
     }
 

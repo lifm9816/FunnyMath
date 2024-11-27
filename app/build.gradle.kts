@@ -51,4 +51,5 @@ dependencies {
     implementation("com.github.yalantis:ucrop:2.2.8")
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.google.firebase:firebase-storage")
+    implementation("com.getbase:floatingactionbutton:1.10.1")
 }

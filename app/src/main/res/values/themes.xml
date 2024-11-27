@@ -4,6 +4,10 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+    
+    <style name="floatStyle">
+        <item name="android:textColor">#FFF</item>
+    </style>
 
     <style name="Theme.FunnyMath" parent="Base.Theme.FunnyMath" />
 </resources>

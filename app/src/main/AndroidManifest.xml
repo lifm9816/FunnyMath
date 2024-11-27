@@ -15,6 +15,24 @@
         android:theme="@style/Theme.FunnyMath"
         tools:targetApi="31">
         <activity
+            android:name=".Floating_button"
+            android:exported="false" />
+        <activity
+            android:name=".Plus_difference"
+            android:exported="false" />
+        <activity
+            android:name=".Trinomial"
+            android:exported="false" />
+        <activity
+            android:name=".trinomial"
+            android:exported="false" />
+        <activity
+            android:name=".Perfect_square_trinomial"
+            android:exported="false" />
+        <activity
+            android:name=".Difference_squares"
+            android:exported="false" />
+        <activity
             android:name=".Common_factor"
             android:exported="false" />
         <activity
