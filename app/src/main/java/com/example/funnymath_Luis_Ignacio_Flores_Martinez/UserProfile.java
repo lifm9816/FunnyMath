@@ -15,6 +15,8 @@ public class UserProfile {
         this.phone = phone;
     }
 
+    public UserProfile() {}
+
     public String getUserId(){
         return userId;
     }

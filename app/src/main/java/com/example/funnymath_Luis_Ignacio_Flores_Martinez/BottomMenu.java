@@ -38,24 +38,21 @@ public class BottomMenu extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.nav_home) {
-                    loadFragment(new Home(), true);
-                } else if (itemId == R.id.nav_learning) {
                     loadFragment(new Learning(), true);
+                } else if (itemId == R.id.nav_learning) {
+                    loadFragment(new Home(), true);
                 } else if (itemId == R.id.nav_account) {
                     loadFragment(new Account(), true);
-                } else if (itemId == R.id.nav_settings) {
+                } else if (itemId == R.id.nav_power) {
                     loadFragment(new Settings(), true);
                 } else if (itemId == R.id.nav_info) {
                     loadFragment(new About(), true);
                 }
-
-                // Ya no es necesario llamar a setSelectedItemId() aquí
-
                 return true;
             }
         });
 
-        loadFragment(new Home(), true);
+        loadFragment(new Learning(), true);
     }
 
     private void loadFragment(Fragment fragment, boolean isAppInitialized){

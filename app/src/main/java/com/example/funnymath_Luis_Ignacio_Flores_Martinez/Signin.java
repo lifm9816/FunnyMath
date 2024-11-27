@@ -1,40 +1,100 @@
 package com.example.funnymath_Luis_Ignacio_Flores_Martinez;
 
+
+
+import android.content.Context;
+
+import android.content.ContextWrapper;
+
 import android.content.Intent;
+
+import android.graphics.Bitmap;
+
+import android.graphics.BitmapFactory;
+
+import android.net.Uri;
+
 import android.os.Bundle;
+
+import android.provider.MediaStore;
+
 import android.util.Log;
+
 import android.view.View;
+
 import android.widget.Button;
+
 import android.widget.EditText;
+
+import android.widget.ImageButton;
+
 import android.widget.Toast;
 
+
+
 import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.core.graphics.Insets;
+
 import androidx.core.view.ViewCompat;
+
 import androidx.core.view.WindowInsetsCompat;
 
+
+
 import com.google.firebase.auth.FirebaseAuth;
+
 import com.google.firebase.auth.FirebaseUser;
+
 import com.google.firebase.firestore.FirebaseFirestore;
+
+
+
+import java.io.File;
+
+import java.io.FileInputStream;
+
+import java.io.FileNotFoundException;
+
+import java.io.FileOutputStream;
+
+import java.io.IOException;
+
+
 
 public class Signin extends AppCompatActivity {
 
-    private EditText name, lastname, email, phone, password, conf_pass; //Campos de texto para los datos del usuario
-    private Button create_btn; //Botón para crear la cuenta
-    private FirebaseAuth mAuth; //Instancia de Firebase Authentication
-    private FirebaseFirestore db; //Instancia de Firestore
+
+
+    private static final int PICK_IMAGE_REQUEST = 1;
+
+    private EditText name, lastname, email, phone, password, conf_pass;
+
+    private Button create_btn;
+
+    private FirebaseAuth mAuth;
+
+    private FirebaseFirestore db;
+
+    private ImageButton photo; // Declaración del ImageButton
+
+
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         EdgeToEdge.enable(this);
+
         setContentView(R.layout.activity_signin);
 
-        mAuth = FirebaseAuth.getInstance(); //Obtiene la instancia de Firebase Authentication
-        db = FirebaseFirestore.getInstance(); //Obtiene la instancia de Firestore
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
-        //Obtiene las referencias a los elementos del layout
         name = findViewById(R.id.name);
         lastname = findViewById(R.id.lastname);
         email = findViewById(R.id.email);
@@ -42,16 +102,27 @@ public class Signin extends AppCompatActivity {
         password = findViewById(R.id.password);
         conf_pass = findViewById(R.id.conf_pass);
         create_btn = findViewById(R.id.create_btn);
+        photo = findViewById(R.id.photo); // Obtener la referencia al ImageButton
 
-        //Listener para el botón de crear cuenta
         create_btn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 registerUser();
-            } //Llama al metodo registerUser
+            }
         });
 
-        //Configura un listener para ajustar el padding de la vista principal según los system bars
+        photo.setOnClickListener(new View.OnClickListener() { // Agregar OnClickListener al ImageButton
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, PICK_IMAGE_REQUEST);
+            }
+        });
+
+        loadImageFromInternalStorage(); // Cargar la imagen al iniciar la actividad
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -59,7 +130,6 @@ public class Signin extends AppCompatActivity {
         });
     }
 
-    //Metodo para registrar al usuario
     private void registerUser(){
         //Obtiene los valores ingresados por el usuario
         String nameR = name.getText().toString().trim();
@@ -108,7 +178,88 @@ public class Signin extends AppCompatActivity {
                             Log.e("FirebaseAuth", errorMessage);
                         }
                     });
-
         }
     }
+
+    // Metodo para guardar la imagen en el almacenamiento interno
+    private String saveImageToInternalStorage(Bitmap bitmapImage){
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+        File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+        File mypath=new File(directory,"profile.jpg");
+
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(mypath);
+            bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fos != null) {
+                    fos.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return directory.getAbsolutePath();
+    }
+
+    // Metodo para cargar la imagen desde el almacenamiento interno
+    private void loadImageFromInternalStorage() {
+
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+
+        File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+
+        File mypath=new File(directory,"profile.jpg");
+
+        try {
+
+            Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(mypath));
+
+            photo.setImageBitmap(bitmap);
+
+        } catch (FileNotFoundException e) {
+
+            // No se encontró la imagen, usar imagen por defecto o no hacer nada
+
+        }
+
+    }
+
+
+
+    @Override
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+
+            Uri imageUri = data.getData();
+
+            try {
+
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+
+                saveImageToInternalStorage(bitmap); // Guardar la imagen
+
+                photo.setImageBitmap(bitmap); // Mostrar la imagen en el ImageButton
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+
+                Toast.makeText(Signin.this, "Error al cargar la imagen", Toast.LENGTH_SHORT).show();
+
+            }
+
+        }
+
+    }
+
 }
