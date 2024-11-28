@@ -2,6 +2,7 @@ package com.example.funnymath_Luis_Ignacio_Flores_Martinez;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,9 +24,7 @@ public class Floating_button extends AppCompatActivity {
         home_btn = findViewById(R.id.home_btn);
         menu2_btn = findViewById(R.id.menu2_btn);
 
-        home_btn.setOnClickListener(v -> goToActivity(BottomMenu.class));
 
-        configureMenu2(R.drawable.explaning, Common_factor.class);
     }
 
     public void goToActivity(Class<?> activity) {
@@ -34,8 +33,4 @@ public class Floating_button extends AppCompatActivity {
         finish();
     }
 
-    public void configureMenu2(int iconResourceId, Class<?> targetActivity){
-        menu2_btn.setIcon(iconResourceId);
-        menu2_btn.setOnClickListener(v -> goToActivity(targetActivity));
-    }
 }

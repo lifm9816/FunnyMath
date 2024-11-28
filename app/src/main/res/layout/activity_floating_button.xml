@@ -33,7 +33,6 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             app:fab_colorNormal="@color/green"
-            app:fab_icon="@drawable/explaning"
             app:fab_title="Menú de sección"/>
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>

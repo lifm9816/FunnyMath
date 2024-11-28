@@ -15,6 +15,12 @@ public class Common_factor extends Floating_button {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_factor);
 
-        configureMenu2(R.drawable.explaning, Common_factor.class);
+        home_btn = findViewById(R.id.home_btn);
+        menu2_btn = findViewById(R.id.menu2_btn);
+
+        home_btn.setOnClickListener(v -> goToActivity(BottomMenu.class));
+
+        menu2_btn.setIcon(R.drawable.explaning);
+        menu2_btn.setOnClickListener(v -> goToActivity(Common_factor.class));
     }
 }
