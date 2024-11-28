@@ -19,7 +19,7 @@ public class Common_factor_quizz extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_common_factor_puzzle);
+        setContentView(R.layout.activity_common_factor_quizz);
 
         initializeViews();
         setupSubmitButton();
@@ -50,7 +50,19 @@ public class Common_factor_quizz extends AppCompatActivity {
                 findViewById(R.id.check5_4)
         };
 
-        // ... inicializar otros CheckBoxes
+        question7Checks = new CheckBox[]{
+                findViewById(R.id.check7_1),
+                findViewById(R.id.check7_2),
+                findViewById(R.id.check7_3),
+                findViewById(R.id.check7_4)
+        };
+
+        question9Checks = new CheckBox[]{
+                findViewById(R.id.check9_1),
+                findViewById(R.id.check9_2),
+                findViewById(R.id.check9_3),
+                findViewById(R.id.check9_4)
+        };
 
         submitButton = findViewById(R.id.submitButton);
     }
@@ -123,5 +135,6 @@ public class Common_factor_quizz extends AppCompatActivity {
         Intent intent = new Intent(Common_factor_quizz.this, Evaluating.class);
         intent.putExtra("score", score); // Pasar la puntuación a la siguiente actividad
         startActivity(intent);
+        finish();
     }
 }

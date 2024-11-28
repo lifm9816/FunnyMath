@@ -35,8 +35,7 @@
                 android:id="@+id/result_image"
                 android:layout_marginTop="20dp"
                 android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:background="@drawable/heart"/>
+                android:layout_height="200dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -108,7 +107,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/blue_card"
             android:textColor="@color/white"
-            android:text="Siguiente sección"
+            android:text="Repetir quizz"
             android:layout_gravity="center"/>
 
     </LinearLayout>
