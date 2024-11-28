@@ -15,6 +15,24 @@
         android:theme="@style/Theme.FunnyMath"
         tools:targetApi="31">
         <activity
+            android:name=".Quiz_result"
+            android:exported="false" />
+        <activity
+            android:name=".Evaluating2"
+            android:exported="false" />
+        <activity
+            android:name=".Evaluating"
+            android:exported="false" />
+        <activity
+            android:name=".Common_factor_quizz"
+            android:exported="false" />
+        <activity
+            android:name=".Common_factor_puzzle"
+            android:exported="false" />
+        <activity
+            android:name=".Common_factor_theory"
+            android:exported="false" />
+        <activity
             android:name=".Difference_squares"
             android:exported="false" />
         <activity
