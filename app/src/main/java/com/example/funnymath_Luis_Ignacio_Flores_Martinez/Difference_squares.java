@@ -15,5 +15,12 @@ public class Difference_squares extends Floating_button {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difference_squares);
 
+        home_btn = findViewById(R.id.home_btn);
+        menu2_btn = findViewById(R.id.menu2_btn);
+
+        home_btn.setOnClickListener(v -> goToActivity(BottomMenu.class));
+
+        menu2_btn.setIcon(R.drawable.evaluating);
+        menu2_btn.setOnClickListener(v -> goToActivity(Difference_squares.class));
     }
 }

@@ -7,17 +7,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Common_factor_theory extends Common_factor {
+public class Common_factor_theory extends Floating_button {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_common_factor_theory);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        home_btn = findViewById(R.id.home_btn);
+        menu2_btn = findViewById(R.id.menu2_btn);
+
+        home_btn.setOnClickListener(v -> goToActivity(BottomMenu.class));
+        menu2_btn.setIcon(R.drawable.explaning);
+        menu2_btn.setOnClickListener(v -> goToActivity(Common_factor.class));
     }
 }

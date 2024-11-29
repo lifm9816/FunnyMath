@@ -24,7 +24,7 @@ public class Evaluating extends AppCompatActivity {
             intent.putExtra("score", score); // Pasar la puntuación a la siguiente actividad
             startActivity(intent);
             finish(); // Cerrar EvaluatingActivity
-        }, 10000); // 10 segundos
+        }, 5000); // 5 segundos
 
     }
 }
