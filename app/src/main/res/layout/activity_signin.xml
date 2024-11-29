@@ -61,7 +61,8 @@
                     android:background="@drawable/rounded_edittext"
                     android:hint="Nombre"
                     android:paddingLeft="10dp"
-                    android:textSize="25sp" />+
+                    android:textSize="25sp"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/lastname"
@@ -71,7 +72,8 @@
                     android:background="@drawable/rounded_edittext"
                     android:hint="Apellidos"
                     android:paddingLeft="10dp"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/email"
@@ -82,7 +84,8 @@
                     android:hint="Correo"
                     android:inputType="textEmailAddress"
                     android:paddingLeft="10dp"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/phone"
@@ -93,7 +96,8 @@
                     android:hint="Teléfono"
                     android:inputType="phone"
                     android:paddingLeft="10dp"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/password"
@@ -104,7 +108,8 @@
                     android:hint="Contraseña"
                     android:inputType="textPassword"
                     android:paddingLeft="10dp"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/conf_pass"
@@ -115,7 +120,8 @@
                     android:hint="Confirmar contraseña"
                     android:inputType="textPassword"
                     android:paddingLeft="10dp"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:textColor="@color/black"/>
 
 
             </LinearLayout>
@@ -127,6 +133,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/green"
+            android:textColor="@color/white"
             android:text="Crear cuenta"
             android:textSize="25dp" />
 

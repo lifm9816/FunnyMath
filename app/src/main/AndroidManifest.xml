@@ -15,6 +15,12 @@
         android:theme="@style/Theme.FunnyMath"
         tools:targetApi="31">
         <activity
+            android:name=".Difference_squares_theory"
+            android:exported="false" />
+        <activity
+            android:name=".Difference_squares_quizz"
+            android:exported="false" />
+        <activity
             android:name=".Memorama"
             android:exported="false" />
         <activity

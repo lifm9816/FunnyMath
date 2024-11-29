@@ -1,10 +1,16 @@
 package com.example.funnymath_Luis_Ignacio_Flores_Martinez;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.funnymath_Luis_Ignacio_Flores_Martinez.CardAdapter;
@@ -70,32 +76,74 @@ public class Memorama extends Floating_button implements CardAdapter.OnCardClick
 
     @Override
     public void onCardClick(int position) {
-        if (cards.get(position).isMatched()) return;
+        Card selectedCard = cards.get(position);
+
+        // Si la carta ya está volteada o emparejada, no hacer nada
+        if (selectedCard.isFlipped() || selectedCard.isMatched()) return;
+
+        // Voltear la carta seleccionada
+        selectedCard.setFlipped(true);
+        adapter.notifyDataSetChanged();
 
         if (firstSelectedPosition == -1) {
-            // Primera carta seleccionada
             firstSelectedPosition = position;
-            cards.get(position).setFlipped(true);
         } else {
-            // Segunda carta seleccionada
             moves++;
             movesText.setText("Movimientos: " + moves);
 
-            if (cards.get(firstSelectedPosition).getId() == cards.get(position).getId()) {
-                // ¡Encontró un par!
-                cards.get(firstSelectedPosition).setMatched(true);
-                cards.get(position).setMatched(true);
+            Card firstCard = cards.get(firstSelectedPosition);
+
+            if (firstCard.getId() == selectedCard.getId()) {
+                firstCard.setMatched(true);
+                selectedCard.setMatched(true);
+                checkWinCondition();
             } else {
-                // No coinciden, voltear de nuevo
-                final int firstPos = firstSelectedPosition;
+                // Esperar 1 segundo antes de voltear las cartas
                 new Handler().postDelayed(() -> {
-                    cards.get(firstPos).setFlipped(false);
-                    cards.get(position).setFlipped(false);
+                    firstCard.setFlipped(false);
+                    selectedCard.setFlipped(false);
                     adapter.notifyDataSetChanged();
                 }, 1000);
             }
             firstSelectedPosition = -1;
         }
-        adapter.notifyDataSetChanged();
+    }
+
+    private void checkWinCondition() {
+        boolean allMatched = true;
+        for (Card card : cards) {
+            if (!card.isMatched()) {
+                allMatched = false;
+                break;
+            }
+        }
+
+        if (allMatched) {
+            showWinnerDialog();
+        }
+    }
+
+    private void showWinnerDialog() {
+        View dialogView = getLayoutInflater().inflate(R.layout.winner_dialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+
+        Button btnQuiz = dialogView.findViewById(R.id.btnQuiz);
+        Button btnRestart = dialogView.findViewById(R.id.btnRestart);
+
+        btnQuiz.setOnClickListener(v -> {
+            // Agregar aquí el Intent para ir al Quiz
+            startActivity(new Intent(Memorama.this, Difference_squares_quizz.class));
+            dialog.dismiss();
+        });
+
+        btnRestart.setOnClickListener(v -> {
+            startActivity(new Intent(Memorama.this, Difference_squares_theory.class));
+            dialog.dismiss();
+        });
+
+        dialog.setCancelable(false);
+        dialog.show();
     }
 }

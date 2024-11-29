@@ -46,7 +46,8 @@
             android:background="@drawable/rounded_edittext"
             android:textSize="25sp"
             android:paddingLeft="10dp"
-            android:hint="Correo"/>
+            android:hint="Correo"
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/password"
@@ -57,7 +58,8 @@
             android:textSize="25sp"
             android:inputType="textPassword"
             android:paddingLeft="10dp"
-            android:hint="Contraseña"/>
+            android:hint="Contraseña"
+            android:textColor="@color/black"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,6 +94,7 @@
             android:layout_marginTop="50dp"
             android:textSize="25dp"
             android:text="Acceder"
+            android:textColor="@color/white"
             android:backgroundTint="@color/green"/>
     </LinearLayout>
 

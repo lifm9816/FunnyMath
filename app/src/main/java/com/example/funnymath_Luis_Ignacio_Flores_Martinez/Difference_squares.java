@@ -13,7 +13,7 @@ import com.google.android.material.card.MaterialCardView;
 
 public class Difference_squares extends Floating_button {
 
-    private MaterialCardView memorama_btn;
+    private MaterialCardView memorama_btn, theory_btn, quiz_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,12 @@ public class Difference_squares extends Floating_button {
         home_btn = findViewById(R.id.home_btn);
         menu2_btn = findViewById(R.id.menu2_btn);
         memorama_btn = findViewById(R.id.memorama_btn);
+        theory_btn = findViewById(R.id.theory_btn);
+        quiz_btn = findViewById(R.id.quiz_btn);
+
+        theory_btn.setOnClickListener(v -> goToActivity(Difference_squares_theory.class));
+
+        quiz_btn.setOnClickListener(v -> goToActivity(Difference_squares_quizz.class));
 
         memorama_btn.setOnClickListener(v -> goToSection(Memorama.class));
 
