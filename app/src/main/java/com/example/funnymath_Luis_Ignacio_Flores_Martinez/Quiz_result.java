@@ -1,6 +1,7 @@
 package com.example.funnymath_Luis_Ignacio_Flores_Martinez;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,11 +16,16 @@ public class Quiz_result extends AppCompatActivity {
     private ImageView resultImage;
     private TextView resultMessage, resultText;
     private Button nextSectionButton, repeatQuizButton;
+    private String quiz;
+    private int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_result);
+
+        MediaPlayer congrats = MediaPlayer.create(Quiz_result.this, R.raw.congrats);
+        MediaPlayer failed = MediaPlayer.create(Quiz_result.this, R.raw.failed);
 
         resultImage = findViewById(R.id.result_image);
         resultMessage = findViewById(R.id.result_message);
@@ -27,19 +33,22 @@ public class Quiz_result extends AppCompatActivity {
         nextSectionButton = findViewById(R.id.nextSection);
         repeatQuizButton = findViewById(R.id.repeatQuiz);
 
-        int score = getIntent().getIntExtra("score", 0); // Obtener la puntuación
+        score = getIntent().getIntExtra("score", 0); // Obtener la puntuación
+        quiz = getIntent().getStringExtra("quiz_name");
         resultText.setText(String.valueOf(score)); // Mostrar la puntuación
 
-        nextSectionButton.setOnClickListener(v -> goSection(Difference_squares.class));
-        repeatQuizButton.setOnClickListener(v -> goSection(Common_factor_quizz.class));
+        nextSectionButton.setOnClickListener(v -> goSection(quiz, score, congrats));
+        repeatQuizButton.setOnClickListener(v -> goSection(quiz, score, failed));
 
         // Configurar la vista según la puntuación
         if (score >= 7) { // Aprobar
+            congrats.start();
             resultImage.setImageResource(R.drawable.heart); // Cambiar la imagen
             resultMessage.setText("¡Felicidades!");
             nextSectionButton.setVisibility(View.VISIBLE); // Mostrar botón "Siguiente sección"
             repeatQuizButton.setVisibility(View.GONE);
         } else { // Reprobar
+            failed.start();
             resultImage.setImageResource(R.drawable.sad); // Cambiar la imagen
             resultMessage.setText("¡Puedes hacerlo mejor!");
             nextSectionButton.setVisibility(View.GONE);    // Ocultar botón "Siguiente sección"
@@ -47,9 +56,35 @@ public class Quiz_result extends AppCompatActivity {
         }
     }
 
-    private void goSection(Class<?> activity){
-        Intent intent = new Intent(Quiz_result.this, activity);
-        startActivity(intent);
-        finish();
+    private void goSection(String quiz, int score, MediaPlayer sound){
+        sound.stop();
+        sound.release();
+
+        Intent intent;
+        if("common_factor".equals(quiz)){
+            if(score >= 7){
+                intent = new Intent(Quiz_result.this, Difference_squares.class);
+                startActivity(intent);
+                finish();
+            }
+            else {
+                intent = new Intent(Quiz_result.this, Common_factor_quizz.class);
+                startActivity(intent);
+                finish();
+            }
+        }
+
+        if("difference_squares".equals(quiz)){
+            if(score >= 7){
+                intent = new Intent(Quiz_result.this, Trinomial.class);
+                startActivity(intent);
+                finish();
+            }
+            else {
+                intent = new Intent(Quiz_result.this, Difference_squares_quizz.class);
+                startActivity(intent);
+                finish();
+            }
+        }
     }
 }

@@ -1,7 +1,9 @@
 package com.example.funnymath_Luis_Ignacio_Flores_Martinez;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
@@ -13,14 +15,52 @@ public class Difference_squares_quizz extends AppCompatActivity {
             radioGroup6, radioGroup7, radioGroup8, radioGroup9, radioGroup10;
     private Button submitButton;
     private int score = 0;
+    private MediaPlayer  correct, wrong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difference_squares_quizz); // Asegúrate de que este sea el nombre correcto de tu layout
 
+        SoundManager.getInstance().pauseMainSound();
+
+        SoundManager.getInstance().playQuizSound(this, R.raw.quiz);
+
+        correct = MediaPlayer.create(Difference_squares_quizz.this, R.raw.correct);
+        wrong = MediaPlayer.create(Difference_squares_quizz.this, R.raw.wrong);
+
         initializeViews();
         setupSubmitButton();
+        setupRadioGroupListeners();
+    }
+
+    private void setupRadioGroupListeners() {
+        setupRadioGroupListener(radioGroup1, R.id.answer1c);
+        setupRadioGroupListener(radioGroup2, R.id.answer2c);
+        setupRadioGroupListener(radioGroup3, R.id.answer3a);
+        setupRadioGroupListener(radioGroup4, R.id.answer4a);
+        setupRadioGroupListener(radioGroup5, R.id.answer5b);
+        setupRadioGroupListener(radioGroup6, R.id.answer6c);
+        setupRadioGroupListener(radioGroup7, R.id.answer7a);
+        setupRadioGroupListener(radioGroup8, R.id.answer8a);
+        setupRadioGroupListener(radioGroup9, R.id.answer9a);
+        setupRadioGroupListener(radioGroup10, R.id.answer10a);
+    }
+
+    private void setupRadioGroupListener(RadioGroup radioGroup, int correctAnswerId) {
+        radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == correctAnswerId) {
+                playSound(R.raw.correct);
+            } else {
+                playSound(R.raw.wrong);
+            }
+        });
+    }
+
+    private void playSound(int soundResId) {
+        MediaPlayer soundPlayer = MediaPlayer.create(this, soundResId);
+        soundPlayer.setOnCompletionListener(MediaPlayer::release);
+        soundPlayer.start();
     }
 
     private void initializeViews() {
@@ -96,9 +136,19 @@ public class Difference_squares_quizz extends AppCompatActivity {
             score++;
         }
 
+        String quiz = "difference_squares";
+
         Intent intent = new Intent(Difference_squares_quizz.this, Evaluating2.class);
         intent.putExtra("score", score); // Pasar la puntuación a la siguiente actividad
+        intent.putExtra("quiz_name", quiz);
         startActivity(intent);
         finish();
     }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        SoundManager.getInstance().stopQuizSound();
+    }
+
 }

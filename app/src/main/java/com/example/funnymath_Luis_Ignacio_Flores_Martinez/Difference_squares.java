@@ -42,4 +42,12 @@ public class Difference_squares extends Floating_button {
         Intent intent = new Intent(Difference_squares.this, activity);
         startActivity(intent);
     }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        if(!SoundManager.getInstance().isMainSoundPlaying()){
+            SoundManager.getInstance().playMainSound(this, R.raw.gamemenu);
+        }
+    }
 }

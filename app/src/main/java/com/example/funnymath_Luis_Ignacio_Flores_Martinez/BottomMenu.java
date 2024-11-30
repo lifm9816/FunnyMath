@@ -1,5 +1,6 @@
 package com.example.funnymath_Luis_Ignacio_Flores_Martinez;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,11 +23,14 @@ public class BottomMenu extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_menu);
+
+        SoundManager.getInstance().playMainSound(this, R.raw.gamemenu);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         frameLayout = findViewById(R.id.main_container);
@@ -65,5 +69,13 @@ public class BottomMenu extends AppCompatActivity {
             fragmentTransaction.add(R.id.main_container, fragment);
         }
         fragmentTransaction.commit();
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        if(!SoundManager.getInstance().isMainSoundPlaying()){
+            SoundManager.getInstance().resumeMainSound();
+        }
     }
 }
