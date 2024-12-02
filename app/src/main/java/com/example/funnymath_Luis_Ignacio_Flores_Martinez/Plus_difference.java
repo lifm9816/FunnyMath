@@ -1,5 +1,6 @@
 package com.example.funnymath_Luis_Ignacio_Flores_Martinez;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -8,17 +9,42 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Plus_difference extends AppCompatActivity {
+import com.google.android.material.card.MaterialCardView;
+
+public class Plus_difference extends Floating_button {
+
+    private MaterialCardView theory_btn, quiz_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_plus_difference);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        home_btn = findViewById(R.id.home_btn);
+        menu2_btn = findViewById(R.id.menu2_btn);
+        theory_btn = findViewById(R.id.theory_btn);
+        quiz_btn = findViewById(R.id.quiz_btn);
+
+        home_btn.setOnClickListener(v -> goToActivity(BottomMenu.class));
+
+        menu2_btn.setIcon(R.drawable.teaching);
+        menu2_btn.setOnClickListener(v -> goToActivity(Plus_difference.class));
+
+        theory_btn.setOnClickListener(v -> goSection(Plus_difference_theory.class));
+        quiz_btn.setOnClickListener(v -> goSection(Plus_difference_quiz.class));
+    }
+
+    public void goSection(Class<?> activity)
+    {
+        Intent intent = new Intent(this, activity);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        if(!SoundManager.getInstance().isMainSoundPlaying()){
+            SoundManager.getInstance().playMainSound(this, R.raw.gamemenu);
+        }
     }
 }

@@ -15,11 +15,20 @@ public class Difference_squares_theory extends Floating_button {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difference_squares_theory);
 
+        SoundManager.getInstance().pauseMainSound();
+        SoundManager.getInstance().playQuizSound(this, R.raw.quiz);
+
         home_btn = findViewById(R.id.home_btn);
         menu2_btn = findViewById(R.id.menu2_btn);
 
         home_btn.setOnClickListener(v -> goToActivity(BottomMenu.class));
         menu2_btn.setIcon(R.drawable.evaluating);
         menu2_btn.setOnClickListener(v -> goToActivity(Difference_squares.class));
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        SoundManager.getInstance().stopQuizSound();
     }
 }

@@ -15,6 +15,39 @@
         android:theme="@style/Theme.FunnyMath"
         tools:targetApi="31">
         <activity
+            android:name=".Congrats"
+            android:exported="false" />
+        <activity
+            android:name=".FinalResult"
+            android:exported="false" />
+        <activity
+            android:name=".EvaluatingFinal"
+            android:exported="false" />
+        <activity
+            android:name=".Plus_difference_theory"
+            android:exported="false" />
+        <activity
+            android:name=".Plus_difference_quiz"
+            android:exported="false" />
+        <activity
+            android:name=".FactorMasterPro"
+            android:exported="false" />
+        <activity
+            android:name=".Trinomial_theory"
+            android:exported="false" />
+        <activity
+            android:name=".Trinomial_quiz"
+            android:exported="false" />
+        <activity
+            android:name=".Perfect_square_trinomial_quiz"
+            android:exported="false" />
+        <activity
+            android:name=".Perfect_square_trinomial_theory"
+            android:exported="false" />
+        <activity
+            android:name=".FactoFaster"
+            android:exported="false" />
+        <activity
             android:name=".Difference_squares_theory"
             android:exported="false" />
         <activity

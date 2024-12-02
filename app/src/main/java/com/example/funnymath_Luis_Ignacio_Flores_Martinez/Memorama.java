@@ -32,6 +32,9 @@ public class Memorama extends Floating_button implements CardAdapter.OnCardClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memorama);
 
+        SoundManager.getInstance().pauseMainSound();
+        SoundManager.getInstance().playQuizSound(this, R.raw.game2);
+
         home_btn = findViewById(R.id.home_btn);
         menu2_btn = findViewById(R.id.menu2_btn);
 
@@ -145,5 +148,11 @@ public class Memorama extends Floating_button implements CardAdapter.OnCardClick
 
         dialog.setCancelable(false);
         dialog.show();
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        SoundManager.getInstance().stopQuizSound();
     }
 }

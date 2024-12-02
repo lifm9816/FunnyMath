@@ -76,12 +76,36 @@ public class Quiz_result extends AppCompatActivity {
 
         if("difference_squares".equals(quiz)){
             if(score >= 7){
-                intent = new Intent(Quiz_result.this, Trinomial.class);
+                intent = new Intent(Quiz_result.this, Perfect_square_trinomial.class);
                 startActivity(intent);
                 finish();
             }
             else {
                 intent = new Intent(Quiz_result.this, Difference_squares_quizz.class);
+                startActivity(intent);
+                finish();
+            }
+        }
+        if("perfect_square_trinomial".equals(quiz)){
+            if(score >= 7){
+                intent = new Intent(Quiz_result.this, Trinomial.class);
+                startActivity(intent);
+                finish();
+            }
+            else {
+                intent = new Intent(Quiz_result.this, Perfect_square_trinomial_quiz.class);
+                startActivity(intent);
+                finish();
+            }
+        }
+        if("trinomial_ax2_bx_c".equals(quiz)){
+            if(score >= 7){
+                intent = new Intent(Quiz_result.this, Plus_difference.class);
+                startActivity(intent);
+                finish();
+            }
+            else {
+                intent = new Intent(Quiz_result.this, Trinomial_quiz.class);
                 startActivity(intent);
                 finish();
             }
