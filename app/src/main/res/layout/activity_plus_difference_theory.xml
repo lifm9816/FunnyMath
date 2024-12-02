@@ -23,7 +23,7 @@
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="¿Qué es la Factorización de una suma o diferencia de cubos"
+                android:text="¿Qué es la factorización de una suma o diferencia de cubos"
                 android:textColor="@color/green"
                 android:textSize="30sp"
                 android:textStyle="bold"

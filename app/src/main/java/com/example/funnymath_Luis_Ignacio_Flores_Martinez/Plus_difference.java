@@ -13,7 +13,7 @@ import com.google.android.material.card.MaterialCardView;
 
 public class Plus_difference extends Floating_button {
 
-    private MaterialCardView theory_btn, quiz_btn;
+    private MaterialCardView theory_btn, quiz_btn, cubeFactor_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class Plus_difference extends Floating_button {
         menu2_btn = findViewById(R.id.menu2_btn);
         theory_btn = findViewById(R.id.theory_btn);
         quiz_btn = findViewById(R.id.quiz_btn);
+        cubeFactor_btn = findViewById(R.id.cubeFactor_btn);
 
         home_btn.setOnClickListener(v -> goToActivity(BottomMenu.class));
 
@@ -32,6 +33,7 @@ public class Plus_difference extends Floating_button {
 
         theory_btn.setOnClickListener(v -> goSection(Plus_difference_theory.class));
         quiz_btn.setOnClickListener(v -> goSection(Plus_difference_quiz.class));
+        cubeFactor_btn.setOnClickListener(v -> goSection(CubeFactor.class));
     }
 
     public void goSection(Class<?> activity)

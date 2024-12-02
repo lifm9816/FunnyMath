@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FunnyMath"
         tools:targetApi="31">
         <activity
+            android:name=".CubeFactor"
+            android:exported="false" />
+        <activity
             android:name=".Congrats"
             android:exported="false" />
         <activity
