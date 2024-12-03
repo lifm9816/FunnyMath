@@ -9,12 +9,6 @@
     android:orientation="vertical"
     tools:context=".Trinomial">
 
-    <include
-        android:id="@+id/floating_menu"
-        layout="@layout/activity_floating_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +26,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="Trinomio de la forma x2 + bx + c"
                 android:textColor="@color/green"
-                android:textSize="35sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"/>
 
@@ -113,6 +107,7 @@
             android:layout_height="170dp"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/blue_card"
+            android:layout_marginBottom="20dp"
             app:strokeColor="@color/blue_card">
 
             <LinearLayout
@@ -140,5 +135,11 @@
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
+
+    <include
+        android:id="@+id/floating_menu"
+        layout="@layout/activity_floating_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </FrameLayout>

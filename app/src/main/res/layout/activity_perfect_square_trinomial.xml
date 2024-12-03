@@ -9,12 +9,6 @@
     android:orientation="vertical"
     tools:context=".Perfect_square_trinomial">
 
-    <include
-        android:id="@+id/floating_menu"
-        layout="@layout/activity_floating_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +26,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="Trinomio al cuadrado perfecto"
                 android:textColor="@color/green"
-                android:textSize="35sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"/>
 
@@ -140,5 +134,11 @@
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
+
+    <include
+        android:id="@+id/floating_menu"
+        layout="@layout/activity_floating_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </FrameLayout>

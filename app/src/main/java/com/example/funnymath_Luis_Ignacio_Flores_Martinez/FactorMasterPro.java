@@ -137,22 +137,22 @@ public class FactorMasterPro extends Floating_button {
     }
 
     private void updateUI() {
-        tvLevel.setText("Level: " + game.getCurrentLevel());
-        tvScore.setText("Score: " + game.getScore());
+        tvLevel.setText("Nivel: " + game.getCurrentLevel());
+        tvScore.setText("Puntuación: " + game.getScore());
         tvExpression.setText(game.getCurrentExpression().getExpression());
         tvFeedback.setText("");
     }
 
     private void showWinnerDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Congratulations!")
-                .setMessage("You've completed all levels!\nFinal Score: " + game.getScore())
-                .setPositiveButton("Play Again", (dialog, which) -> {
+        builder.setTitle("Felicidades!")
+                .setMessage("Haz completado todos los niveles!\nPuntuación final: " + game.getScore())
+                .setPositiveButton("Jugar de nuevo", (dialog, which) -> {
                     game = new FactorMasterProGame();
                     clearInputs();
                     updateUI();
                 })
-                .setNegativeButton("Exit", (dialog, which) -> finish())
+                .setNegativeButton("Salir", (dialog, which) -> finish())
                 .setCancelable(false)
                 .show();
     }

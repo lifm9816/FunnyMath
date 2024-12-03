@@ -8,12 +8,6 @@
     android:background="@color/blue"
     tools:context=".Trinomial_theory">
 
-    <include
-        android:id="@+id/floating_menu"
-        layout="@layout/activity_floating_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +25,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="¿Qué es un Trinomio de la Forma ax^2 + bx + c?"
                 android:textColor="@color/green"
-                android:textSize="35sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"/>
 
@@ -83,5 +77,11 @@
 
         </ScrollView>
     </LinearLayout>
+
+    <include
+        android:id="@+id/floating_menu"
+        layout="@layout/activity_floating_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </FrameLayout>

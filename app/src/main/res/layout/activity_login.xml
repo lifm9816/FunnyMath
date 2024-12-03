@@ -9,13 +9,14 @@
     tools:context=".Login">
 
     <LinearLayout
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="30dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -30,9 +31,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Listo para aprender?
-
-            Por favor ingresa tus datos para acceder a tu cuenta"
+            android:text="Listo para aprender? Por favor ingresa tus datos para acceder a tu cuenta"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20dp"
@@ -44,7 +43,7 @@
             android:layout_height="50dp"
             android:layout_margin="15dp"
             android:background="@drawable/rounded_edittext"
-            android:textSize="25sp"
+            android:textSize="18sp"
             android:paddingLeft="10dp"
             android:hint="Correo"
             android:textColor="@color/black"/>
@@ -55,7 +54,7 @@
             android:layout_height="50dp"
             android:layout_margin="15dp"
             android:background="@drawable/rounded_edittext"
-            android:textSize="25sp"
+            android:textSize="18sp"
             android:inputType="textPassword"
             android:paddingLeft="10dp"
             android:hint="Contraseña"

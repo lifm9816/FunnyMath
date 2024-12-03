@@ -8,12 +8,6 @@
     android:background="@color/blue"
     tools:context=".Difference_squares_theory">
 
-    <include
-        android:id="@+id/floating_menu"
-        layout="@layout/activity_floating_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +25,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="¿Cómo factorizar por diferencia de cuadrados?"
                 android:textColor="@color/green"
-                android:textSize="35sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"/>
 
@@ -48,5 +42,11 @@
             android:layout_height="400dp"
             android:background="@drawable/difference_squares"/>
     </LinearLayout>
+
+    <include
+        android:id="@+id/floating_menu"
+        layout="@layout/activity_floating_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </FrameLayout>

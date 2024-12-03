@@ -57,7 +57,7 @@
                 android:id="@+id/tvScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Score: 0"
+                android:text="Puntuación: 0"
                 android:textSize="18sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
@@ -93,7 +93,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Enter factors (e.g., 1,2,3,6)"
+                android:hint="Introducir factores (e.g., 1,2,3,6)"
                 android:textColor="@color/white"/>
 
             <Button
@@ -125,7 +125,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="First number"
+                android:hint="Primer número"
                 android:textColor="@color/white"/>
 
             <TextView
@@ -140,7 +140,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Second number"
+                android:hint="Segundo numero"
                 android:textColor="@color/white"/>
 
             <Button
@@ -179,7 +179,7 @@
                 android:id="@+id/btnHint3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hint"
+                android:text="Pista"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/green"/>
@@ -189,7 +189,7 @@
             android:id="@+id/btnCheck"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Check Answer"
+            android:text="Verificar respuesta"
             android:layout_marginTop="24dp"
             android:backgroundTint="@color/green"
             android:textColor="@color/white"/>
