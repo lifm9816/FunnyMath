@@ -120,7 +120,7 @@
                     android:text="FactoFaster"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"/>
 
                 <ImageView

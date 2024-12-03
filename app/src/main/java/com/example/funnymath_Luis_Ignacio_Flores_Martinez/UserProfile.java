@@ -1,6 +1,6 @@
 package com.example.funnymath_Luis_Ignacio_Flores_Martinez;
 
-public class UserProfile {
+public class    UserProfile {
     private String userId;
     private String name;
     private String lastname;
