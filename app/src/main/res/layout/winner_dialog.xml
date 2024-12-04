@@ -23,7 +23,8 @@
         android:text="Pasar al quiz"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/green"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/btnRestart"
@@ -31,6 +32,7 @@
         android:layout_height="wrap_content"
         android:text="Repasar teoría"
         android:backgroundTint="@color/blue_card"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

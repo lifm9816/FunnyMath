@@ -1,6 +1,7 @@
 package com.example.funnymath_Luis_Ignacio_Flores_Martinez;
 
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -37,7 +38,29 @@ public class FactorMasterPro extends Floating_button {
         initializeViews();
         setupGame();
         setupListeners();
+        showInstructionsDialog();
     }
+
+    private void showInstructionsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.MiAlertDialog));
+        builder.setTitle("Instrucciones del Juego")
+                .setMessage("¡Bienvenido a FactorMaster Pro!\n\n" +
+                        "1. Identifica los factores de la ecuación cuadrática proporcionada.\n" +
+                        "2. Introduce los números que sumen y multipliquen correctamente.\n" +
+                        "3. Ingresa la forma factorizada como (x + p)(x + q).\n\n" +
+                        "Usa las pistas sabiamente, ya que cada uso reducirá tu puntaje final.\n\n" +
+                        "¡Buena suerte!")
+                .setPositiveButton("¡Entendido!", (dialog, which) -> dialog.dismiss())
+                .setCancelable(false);
+        AlertDialog dialog = builder.create();
+        dialog.setOnShowListener(d -> {
+            Button positiveButton = dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE);
+            positiveButton.setTextColor(getResources().getColor(R.color.white));
+            positiveButton.setBackgroundColor(getResources().getColor(R.color.green));
+        });
+        dialog.show();
+    }
+
 
     private void initializeViews() {
         tvLevel = findViewById(R.id.tvLevel);
@@ -59,24 +82,41 @@ public class FactorMasterPro extends Floating_button {
         updateUI();
     }
 
+    private void showHintDialog(String hintMessage) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MiAlertDialog);
+        builder.setTitle("Pista")
+                .setMessage(hintMessage)
+                .setPositiveButton("Aceptar", (dialog, which) -> dialog.dismiss())
+                .setCancelable(false);
+        AlertDialog dialog = builder.create();
+        dialog.setOnShowListener(d -> {
+            Button positiveButton = dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE);
+            positiveButton.setTextColor(getResources().getColor(R.color.white));
+            positiveButton.setBackgroundColor(getResources().getColor(R.color.green));
+        });
+        dialog.show();
+    }
+
+
     private void setupListeners() {
         btnHint1.setOnClickListener(v -> {
             game.useHint();
-            tvFeedback.setText(game.getCurrentExpression().getFactorsHint());
+            showHintDialog(game.getCurrentExpression().getFactorsHint());
         });
 
         btnHint2.setOnClickListener(v -> {
             game.useHint();
-            tvFeedback.setText(game.getCurrentExpression().getSumsHint());
+            showHintDialog(game.getCurrentExpression().getSumsHint());
         });
 
         btnHint3.setOnClickListener(v -> {
             game.useHint();
-            tvFeedback.setText(game.getCurrentExpression().getFactoredHint());
+            showHintDialog(game.getCurrentExpression().getFactoredHint());
         });
 
         btnCheck.setOnClickListener(v -> checkAnswer());
     }
+
 
     private void checkAnswer() {
         FactorMasterProGame.QuadraticExpression current = game.getCurrentExpression();

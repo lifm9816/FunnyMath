@@ -43,7 +43,29 @@ public class CubeFactor extends Floating_button {
         // Generar primer problema y mostrar score inicial
         generateNewProblem();
         updateScore();
+        showInstructionsDialog();
     }
+
+    private void showInstructionsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MiAlertDialog);
+        builder.setTitle("Instrucciones del Juego")
+                .setMessage("¡Bienvenido a CubeFactor!\n\n" +
+                        "1. Identifica los factores del cubo perfecto proporcionado.\n" +
+                        "2. Introduce los términos correctos en los campos proporcionados.\n" +
+                        "3. Usa pistas sabiamente para obtener ayuda, pero perderás puntos.\n\n" +
+                        "¡Diviértete y mejora tus habilidades de factorización!")
+                .setPositiveButton("¡Entendido!", (dialog, which) -> dialog.dismiss())
+                .setCancelable(false);
+
+        AlertDialog dialog = builder.create();
+        dialog.setOnShowListener(d -> {
+            Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+            positiveButton.setTextColor(getResources().getColor(R.color.white));
+            positiveButton.setBackgroundColor(getResources().getColor(R.color.green));
+        });
+        dialog.show();
+    }
+
 
     private void initializeViews() {
         tvProblem = findViewById(R.id.tvProblem);
@@ -92,11 +114,19 @@ public class CubeFactor extends Floating_button {
 
     private void showHint() {
         String hint = game.getHint();
-        new AlertDialog.Builder(this)
-                .setTitle("Pista")
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MiAlertDialog);
+        builder.setTitle("Pista")
                 .setMessage(hint)
-                .setPositiveButton("Entendido", null)
-                .show();
+                .setPositiveButton("¡Entendido!", (dialog, which) -> dialog.dismiss())
+                .setCancelable(false);
+
+        AlertDialog dialog = builder.create();
+        dialog.setOnShowListener(d -> {
+            Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+            positiveButton.setTextColor(getResources().getColor(R.color.white));
+            positiveButton.setBackgroundColor(getResources().getColor(R.color.green));
+        });
+        dialog.show();
     }
 
     private void updateScore() {

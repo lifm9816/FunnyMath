@@ -51,7 +51,26 @@ public class Memorama extends Floating_button implements CardAdapter.OnCardClick
         recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
         adapter = new CardAdapter(cards, this);
         recyclerView.setAdapter(adapter);
+
+        showInstructionsDialog();
     }
+
+    private void showInstructionsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MiAlertDialog);
+        builder.setTitle("Instrucciones")
+                .setMessage("Bienvenido al Memorama de FactoFunny. Encuentra las parejas de expresiones y sus factorizaciones correspondientes. ¡Recuerda cada movimiento cuenta, así que juega estratégicamente!")
+                .setPositiveButton("Entendido", (dialog, which) -> dialog.dismiss())
+                .setCancelable(false);
+
+        AlertDialog dialog = builder.create();
+        dialog.setOnShowListener(d -> {
+            Button positiveButton = dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE);
+            positiveButton.setTextColor(getResources().getColor(R.color.white));
+            positiveButton.setBackgroundColor(getResources().getColor(R.color.green));
+        });
+        dialog.show();
+    }
+
 
     private void initializeCards() {
         cards = new ArrayList<>();

@@ -33,7 +33,8 @@
         android:text="Hacer el quiz"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/green"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/btnReviewTheory"
@@ -41,6 +42,7 @@
         android:layout_height="wrap_content"
         android:text="Menú de sección"
         android:backgroundTint="@color/blue_card"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Common_factor_puzzle extends Floating_button {
@@ -39,7 +41,31 @@ public class Common_factor_puzzle extends Floating_button {
         setupCheckButton();
         setupResetButton();
         saveOriginalPositions();
+        showInstructions();
     }
+
+    private void showInstructions() {
+        String instructions = "1. Arrastra las piezas del rompecabezas a las zonas correspondientes.\n" +
+                "2. Asegúrate de que las ecuaciones estén completas correctamente.\n" +
+                "3. Toca el botón de verificar para comprobar tus respuestas.\n" +
+                "4. Si necesitas reiniciar el juego, presiona el botón de reiniciar.";
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MiAlertDialog);
+        builder.setTitle("Instrucciones del Juego")
+                .setMessage(instructions)
+                .setPositiveButton("¡Entendido!", (dialog, which) -> dialog.dismiss())
+                .setCancelable(false);
+
+        AlertDialog dialog = builder.create();
+        dialog.setOnShowListener(d -> {
+            Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+            positiveButton.setTextColor(getResources().getColor(R.color.white));
+            positiveButton.setBackgroundColor(getResources().getColor(R.color.green));
+        });
+        dialog.show();
+    }
+
+
 
     private void initializeViews() {
         // Inicializar las zonas de destino en el orden correcto

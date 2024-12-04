@@ -7,6 +7,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -45,7 +46,25 @@ public class FactoFaster extends Floating_button {
 
         // Set up check button
         btnCheck.setOnClickListener(v -> checkAnswer());
+        showInstructionsDialog();
     }
+
+    private void showInstructionsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MiAlertDialog);
+        builder.setTitle("Instrucciones")
+                .setMessage("Bienvenido a FactoFaster. En este juego, debes resolver rápidamente ejercicios de factorización. Responde correctamente para avanzar al siguiente ejercicio. ¡Buena suerte!")
+                .setPositiveButton("Entendido", (dialog, which) -> dialog.dismiss())
+                .setCancelable(false);
+
+        AlertDialog dialog = builder.create();
+        dialog.setOnShowListener(d -> {
+            Button positiveButton = dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE);
+            positiveButton.setTextColor(getResources().getColor(R.color.white));
+            positiveButton.setBackgroundColor(getResources().getColor(R.color.green));
+        });
+        dialog.show();
+    }
+
 
     private void initializeViews() {
         tvProgress = findViewById(R.id.tvProgress);

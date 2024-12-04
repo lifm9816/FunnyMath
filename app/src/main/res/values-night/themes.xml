@@ -8,4 +8,17 @@
         <item name="android:navigationBarColor">@color/blue</item>
         <item name="android:textColorHint">@color/gray</item>
     </style>
+
+    <style name="MiAlertDialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <!-- Fondo del diálogo -->
+        <item name="android:background">@color/dark_blue</item>
+        <!-- Color del título -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <!-- Color del mensaje -->
+        <item name="android:textColor">@color/green</item>
+        <!-- Color de acento para los botones -->
+        <item name="colorAccent">@color/green</item>
+        <!-- Personalización de los botones -->
+    </style>
+
 </resources>
