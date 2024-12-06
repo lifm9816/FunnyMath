@@ -49,6 +49,7 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <!-- Pregunta 1 -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -62,45 +63,43 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="1. Factoriza el trinomio: 2x² + 7x + 3"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup1"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer1a"
+                                android:id="@+id/radio1_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2x + 1)(x + 3)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer1b"
+                                android:id="@+id/radio1_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(x + 1)(2x + 3)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer1c"
+                                android:id="@+id/radio1_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2x + 3)(x + 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer1d"
+                                android:id="@+id/radio1_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(x + 3)(2x + 1)" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+                <!-- Pregunta 2 (Selección múltiple) -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -114,41 +113,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="2. Factoriza el trinomio: 3y² - 10y + 8"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup2"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer2a"
+                                android:id="@+id/radio2_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(3y - 4)(y - 2)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer2b"
+                                android:id="@+id/radio2_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(y - 4)(3y - 2)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer2c"
+                                android:id="@+id/radio2_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(3y - 2)(y - 4)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer2d"
+                                android:id="@+id/radio2_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(y - 2)(3y - 4)" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -166,41 +162,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="3. Factoriza el trinomio: 6a² + 11a - 10"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup3"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer3a"
+                                android:id="@+id/radio3_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2a - 5)(3a + 2)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer3b"
+                                android:id="@+id/radio3_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(3a - 5)(2a + 2)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer3c"
+                                android:id="@+id/radio3_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2a + 5)(3a - 2)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer3d"
+                                android:id="@+id/radio3_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(3a + 5)(2a - 2)" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -218,41 +211,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="4. Factoriza el trinomio: 4m² - 17m + 4"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup4"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer4a"
+                                android:id="@+id/radio4_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(4m - 1)(m - 4)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer4b"
+                                android:id="@+id/radio4_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(m - 1)(4m - 4)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer4c"
+                                android:id="@+id/radio4_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2m - 1)(2m - 4)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer4d"
+                                android:id="@+id/radio4_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(4m - 4)(m - 1)" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -270,41 +260,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="5. Factoriza el trinomio: 10p² + 13p - 3"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup5"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer5a"
+                                android:id="@+id/radio5_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2p - 3)(5p + 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer5b"
+                                android:id="@+id/radio5_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(5p - 3)(2p + 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer5c"
+                                android:id="@+id/radio5_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2p + 3)(5p - 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer5d"
+                                android:id="@+id/radio5_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(5p + 3)(2p - 1)" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -322,41 +309,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="6. Factoriza el trinomio: 5x² - 16x + 3"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup6"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer6a"
+                                android:id="@+id/radio6_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(5x - 1)(x - 3)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer6b"
+                                android:id="@+id/radio6_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(x - 1)(5x - 3)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer6c"
+                                android:id="@+id/radio6_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(5x - 3)(x - 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer6d"
+                                android:id="@+id/radio6_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(x - 3)(5x - 1)" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -374,41 +358,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="7. Factoriza el trinomio: 8y² + 10y - 3"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup7"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer7a"
+                                android:id="@+id/radio7_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(4y - 1)(2y + 3)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer7b"
+                                android:id="@+id/radio7_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2y - 1)(4y + 3)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer7c"
+                                android:id="@+id/radio7_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(4y + 1)(2y - 3)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer7d"
+                                android:id="@+id/radio7_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2y + 1)(4y - 3)" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -426,41 +407,37 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="8. Factoriza el trinomio: 12a² - 7a - 12"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup8"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer8a"
+                                android:id="@+id/radio8_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(4a + 3)(3a - 4)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer8b"
+                                android:id="@+id/radio8_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(3a + 4)(4a - 3)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer8c"
+                                android:id="@+id/radio8_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(4a - 3)(3a + 4)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer8d"
+                                android:id="@+id/radio8_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(3a - 4)(4a + 3)" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -478,41 +455,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="9. Factoriza el trinomio: 9m² + 24m + 16"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup9"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer9a"
+                                android:id="@+id/radio9_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(3m + 4)(3m + 4)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer9b"
+                                android:id="@+id/radio9_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(9m + 4)(m + 4)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer9c"
+                                android:id="@+id/radio9_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(3m + 8)(3m + 2)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer9d"
+                                android:id="@+id/radio9_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(m + 4)(9m + 4)" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -530,53 +504,49 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="10. Factoriza el trinomio: 6p² - 11p - 35"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup10"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer10a"
+                                android:id="@+id/radio10_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2p - 7)(3p + 5)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer10b"
+                                android:id="@+id/radio10_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(3p - 7)(2p + 5)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer10c"
+                                android:id="@+id/radio10_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2p + 7)(3p - 5)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer10d"
+                                android:id="@+id/radio10_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(3p + 7)(2p - 5)" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <Button
                     android:id="@+id/submitButton"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Enviar"
-                    android:textColor="@color/white"
+                    android:text="Verificar Respuestas"
                     android:backgroundTint="@color/green"
-                    android:layout_gravity="center"/>
+                    android:layout_marginTop="16dp"/>
 
             </LinearLayout>
 

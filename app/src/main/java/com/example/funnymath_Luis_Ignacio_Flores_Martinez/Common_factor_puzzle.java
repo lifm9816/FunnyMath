@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Random;
+
 public class Common_factor_puzzle extends Floating_button {
 
     private TextView[] dropZones;
@@ -19,6 +21,8 @@ public class Common_factor_puzzle extends Floating_button {
     private int activePointerId;
     private TextView selectedPiece = null;
     private float[] originalX, originalY;
+    private Random random = new Random();
+    private int a1, b1, x1, a2, b2, x2; // Variables de instancia para los ejercicios
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +30,6 @@ public class Common_factor_puzzle extends Floating_button {
         setContentView(R.layout.activity_common_factor_puzzle);
 
         SoundManager.getInstance().pauseMainSound();
-
         SoundManager.getInstance().playQuizSound(this, R.raw.game);
 
         home_btn = findViewById(R.id.home_btn);
@@ -65,19 +68,15 @@ public class Common_factor_puzzle extends Floating_button {
         dialog.show();
     }
 
-
-
     private void initializeViews() {
-        // Inicializar las zonas de destino en el orden correcto
-        dropZones = new TextView[] {
+        dropZones = new TextView[]{
                 findViewById(R.id.dropZone1_1),
                 findViewById(R.id.dropZone1_2),
                 findViewById(R.id.dropZone2_1),
                 findViewById(R.id.dropZone2_2)
         };
 
-        // Inicializar las piezas del puzzle
-        puzzlePieces = new TextView[] {
+        puzzlePieces = new TextView[]{
                 findViewById(R.id.piece1),
                 findViewById(R.id.piece2),
                 findViewById(R.id.piece3),
@@ -207,19 +206,56 @@ public class Common_factor_puzzle extends Floating_button {
             answers[i] = dropZones[i].getText().toString().trim();
         }
 
-        // Primera ecuación
-        boolean firstEquationCorrect = answers[0].equals("x") &&
-                answers[1].equals("(x + 2)");
+        // Verificar las respuestas para factor común
+        boolean firstEquationCorrect = answers[0].equals(String.format("%d", a1)) &&
+                answers[1].equals(String.format("(%dx^%d + %d)", b1, x1, b2));
 
         // Segunda ecuación
-        boolean secondEquationCorrect = answers[2].equals("m³") &&
-                answers[3].equals("(3 - m²)");
+        boolean secondEquationCorrect = answers[2].equals(String.format("%d", a2)) &&
+                answers[3].equals(String.format("(%dx^%d + %d)", b1, x1, b2));
 
         boolean isCorrect = firstEquationCorrect && secondEquationCorrect;
 
         // Mostrar resultado
         String message = isCorrect ? "¡Correcto! ¡Muy bien!" : "Intenta de nuevo";
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void generateRandomPuzzle() {
+        // Generar dos expresiones con factor común aleatorio
+        a1 = random.nextInt(10) + 1;
+        b1 = random.nextInt(5) + 1;
+        x1 = random.nextInt(3) + 1;
+        a2 = random.nextInt(10) + 1;
+        b2 = random.nextInt(5) + 1;
+        x2 = random.nextInt(3) + 1;
+
+        String expression1 = String.format("%dx^%d + %dx^%d", a1 * b1, x1 + 1, a1*b2, x1);
+        String factor1 = String.format("%d", a1);
+        String term1_1 = String.format("(%dx^%d + %d)", b1, x1, b2);
+
+        String expression2 = String.format("%dx^%d + %dx^%d", a2 * b1, x2 + 1, a2*b2, x2);
+        String factor2 = String.format("%d", a2);
+        String term2_1 = String.format("(%dx^%d + %d)", b1, x1, b2);
+
+
+        // Asignar las expresiones y factores a los TextViews
+        TextView equation1 = findViewById(R.id.equation1);
+        TextView equation2 = findViewById(R.id.equation2);
+        equation1.setText(expression1);
+        equation2.setText(expression2);
+
+        TextView piece1 = findViewById(R.id.piece1);
+        TextView piece2 = findViewById(R.id.piece2);
+        TextView piece3 = findViewById(R.id.piece3);
+        TextView piece4 = findViewById(R.id.piece4);
+        piece1.setText(factor1);
+        piece2.setText(term1_1);
+        piece3.setText(factor2);
+        piece4.setText(term2_1);
+
+        // Reiniciar el puzzle para que las piezas estén en su posición original
+        resetPuzzle();
     }
 
     @Override

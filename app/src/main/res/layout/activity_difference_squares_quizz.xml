@@ -42,13 +42,13 @@
             android:layout_height="match_parent"
             android:background="@color/blue">
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <!-- Pregunta 1 -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -62,45 +62,43 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="1. Factoriza la expresión: 4x² - 49"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup1"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer1a"
+                                android:id="@+id/radio1_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2x + 7)(2x + 7)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer1b"
+                                android:id="@+id/radio1_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2x - 7)(2x - 7)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer1c"
+                                android:id="@+id/radio1_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(2x + 7)(2x - 7)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer1d"
+                                android:id="@+id/radio1_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(4x + 7)(x - 7)" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+                <!-- Pregunta 2 (Selección múltiple) -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -114,41 +112,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="2. ¿Cuál de las siguientes expresiones es una diferencia de cuadrados?"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup2"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer2a"
+                                android:id="@+id/radio2_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="9x² + 16" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer2b"
+                                android:id="@+id/radio2_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="25a² - 10b" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer2c"
+                                android:id="@+id/radio2_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="16m⁴ - 81n²" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer2d"
+                                android:id="@+id/radio2_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="x² + 2xy + y²" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -166,41 +161,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="3. Factoriza la expresión: 100p⁶ - 1"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup3"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer3a"
+                                android:id="@+id/radio3_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(10p³ + 1)(10p³ - 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer3b"
+                                android:id="@+id/radio3_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(10p² + 1)(10p⁴ - 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer3c"
+                                android:id="@+id/radio3_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(100p³ + 1)(p³ - 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer3d"
+                                android:id="@+id/radio3_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="No se puede factorizar" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -218,43 +210,39 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="4. Factoriza la expresión: (x + 2)² - 9"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup4"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer4a"
+                                android:id="@+id/radio4_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(x + 5)(x - 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer4b"
+                                android:id="@+id/radio4_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(x + 1)(x - 5)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer4c"
+                                android:id="@+id/radio4_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(x + 5)(x + 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer4d"
+                                android:id="@+id/radio4_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(x - 1)(x - 1)" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
-
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -271,41 +259,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="5. Si la expresión  x² - y²  representa el área de un rectángulo, ¿cuáles serían las posibles expresiones para la longitud y el ancho del rectángulo?"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup5"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer5a"
+                                android:id="@+id/radio5_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Longitud: x, Ancho: y" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer5b"
+                                android:id="@+id/radio5_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Longitud: x + y, Ancho: x - y" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer5c"
+                                android:id="@+id/radio5_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Longitud: x², Ancho: y²" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer5d"
+                                android:id="@+id/radio5_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="No se puede determinar" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -323,41 +308,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="6. ¿Cuál es el resultado de factorizar la expresión 25x² - 1?"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup6"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer6a"
+                                android:id="@+id/radio6_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(5x - 1)(5x - 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer6b"
+                                android:id="@+id/radio6_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(5x + 1)(5x + 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer6c"
+                                android:id="@+id/radio6_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(5x + 1)(5x - 1)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer6d"
+                                android:id="@+id/radio6_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="No se puede factorizar" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -375,42 +357,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="7. Factoriza la siguiente expresión: 1 - 81y⁴"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup7"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer7a"
+                                android:id="@+id/radio7_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(1 + 9y²)(1 - 9y²)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer7b"
+                                android:id="@+id/radio7_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(1 + 9y)(1 - 9y)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer7c"
+                                android:id="@+id/radio7_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(1 + 3y²)(1 - 3y²)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer7d"
+                                android:id="@+id/radio7_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="No se puede factorizar" />
-
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -428,41 +406,37 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="8.  ¿Qué expresión representa la factorización de a⁴ - 16?"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:layout_marginBottom="8dp"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup8"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer8a"
+                                android:id="@+id/radio8_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(a² + 4)(a² - 4)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer8b"
+                                android:id="@+id/radio8_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(a² + 2)(a² - 2)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer8c"
+                                android:id="@+id/radio8_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(a + 2)(a - 2)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer8d"
+                                android:id="@+id/radio8_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="No se puede factorizar" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -480,41 +454,38 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="9. Si se factoriza la expresión 16x² - 25y², ¿cuál de las siguientes opciones es un factor?"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup9"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer9a"
+                                android:id="@+id/radio9_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="4x + 5y" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer9b"
+                                android:id="@+id/radio9_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="4x - 5" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer9c"
+                                android:id="@+id/radio9_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="2x + 5y" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer9d"
+                                android:id="@+id/radio9_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="8x - 25y" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -532,50 +503,49 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="10. Factoriza la expresión: (x - 3)² - 49"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup10"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/answer10a"
+                                android:id="@+id/radio10_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(x + 4)(x - 10)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer10b"
+                                android:id="@+id/radio10_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(x - 10)(x - 10)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer10c"
+                                android:id="@+id/radio10_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(x + 4)(x + 4)" />
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
-                                android:id="@+id/answer10d"
+                                android:id="@+id/radio10_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="No se puede factorizar" />
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <Button
                     android:id="@+id/submitButton"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Enviar" />
+                    android:text="Verificar Respuestas"
+                    android:backgroundTint="@color/green"
+                    android:layout_marginTop="16dp"/>
 
             </LinearLayout>
 

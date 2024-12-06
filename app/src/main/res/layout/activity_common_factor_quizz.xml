@@ -62,12 +62,13 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="1. ¿Cuál es el factor común en la expresión: 15x²y + 10xy²?"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup1"
@@ -77,26 +78,22 @@
                             <RadioButton
                                 android:id="@+id/radio1_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5xy"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio1_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5x"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio1_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5y"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio1_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="xy"/>
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -115,36 +112,39 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="2. Selecciona las expresiones que tienen como factor común 3x:"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
-                        <CheckBox
-                            android:id="@+id/check2_1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="6x² + 9x"/>
+                        <RadioGroup
+                            android:id="@+id/radioGroup2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-                        <CheckBox
-                            android:id="@+id/check2_2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="3x³ + 3xy"/>
+                            <RadioButton
+                                android:id="@+id/radio2_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
 
-                        <CheckBox
-                            android:id="@+id/check2_3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="3x + 3"/>
+                            <RadioButton
+                                android:id="@+id/radio2_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
 
-                        <CheckBox
-                            android:id="@+id/check2_4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="9x² - 3x"/>
+                            <RadioButton
+                                android:id="@+id/radio2_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioButton
+                                android:id="@+id/radio2_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -161,12 +161,13 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="3. ¿Cuál es el factor común en: 12x³y² - 6x²y²?"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup3"
@@ -176,26 +177,22 @@
                             <RadioButton
                                 android:id="@+id/radio3_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="6x²y²"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio3_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="2xy²"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio3_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="6xy²"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio3_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="3x²y²"/>
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -213,12 +210,13 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="4. En la expresión 8x⁴ + 4x³, el factor común es:"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup4"
@@ -228,26 +226,22 @@
                             <RadioButton
                                 android:id="@+id/radio4_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="4x⁴"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio4_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="4x³"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio4_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="4x"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio4_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="x³"/>
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -265,36 +259,39 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="5. Selecciona las expresiones que tienen a 2x² como factor común:"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
-                        <CheckBox
-                            android:id="@+id/check5_1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="4x³ + 2x²y"/>
+                        <RadioGroup
+                            android:id="@+id/radioGroup5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-                        <CheckBox
-                            android:id="@+id/check5_2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="6x⁴ - 2x²"/>
+                            <RadioButton
+                                android:id="@+id/radio5_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
 
-                        <CheckBox
-                            android:id="@+id/check5_3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="2x² + 4x"/>
+                            <RadioButton
+                                android:id="@+id/radio5_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
 
-                        <CheckBox
-                            android:id="@+id/check5_4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="4x² + 8x³"/>
+                            <RadioButton
+                                android:id="@+id/radio5_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioButton
+                                android:id="@+id/radio5_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -311,12 +308,13 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="6. El factor común de 15x²y³ + 10x²y² es:"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup6"
@@ -326,26 +324,22 @@
                             <RadioButton
                                 android:id="@+id/radio6_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5x²y²"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio6_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5xy²"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio6_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5x²y"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio6_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5xy"/>
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -363,36 +357,39 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="7. Marca las expresiones donde &quot;a&quot; es factor común:"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
-                        <CheckBox
-                            android:id="@+id/check7_1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="a² + ab"/>
+                        <RadioGroup
+                            android:id="@+id/radioGroup7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-                        <CheckBox
-                            android:id="@+id/check7_2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ab + b²"/>
+                            <RadioButton
+                                android:id="@+id/radio7_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
 
-                        <CheckBox
-                            android:id="@+id/check7_3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="a³ + a"/>
+                            <RadioButton
+                                android:id="@+id/radio7_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
 
-                        <CheckBox
-                            android:id="@+id/check7_4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ac + ad"/>
+                            <RadioButton
+                                android:id="@+id/radio7_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioButton
+                                android:id="@+id/radio7_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -409,9 +406,9 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="8. En la expresión 3xy² + 6x²y², el factor común es:"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:layout_marginBottom="8dp"/>
@@ -424,26 +421,22 @@
                             <RadioButton
                                 android:id="@+id/radio8_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="3xy²"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio8_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="xy²"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio8_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="3y²"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio8_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="3x"/>
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -461,36 +454,39 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="9. Selecciona las expresiones que tienen como factor común 4z:"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
-                        <CheckBox
-                            android:id="@+id/check9_1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="8z² + 4z"/>
+                        <RadioGroup
+                            android:id="@+id/radioGroup9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-                        <CheckBox
-                            android:id="@+id/check9_2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="4z³ - 12z²"/>
+                            <RadioButton
+                                android:id="@+id/radio9_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
 
-                        <CheckBox
-                            android:id="@+id/check9_3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="4z + 4"/>
+                            <RadioButton
+                                android:id="@+id/radio9_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
 
-                        <CheckBox
-                            android:id="@+id/check9_4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="16z² - 8z"/>
+                            <RadioButton
+                                android:id="@+id/radio9_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioButton
+                                android:id="@+id/radio9_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -507,12 +503,13 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/question10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="10. ¿Cuál es el factor común en 25x³y² - 15x²y²?"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:layout_marginBottom="8dp"/>
+                            android:layout_marginBottom="8dp"
+                            android:text="pregunta 1"/>
 
                         <RadioGroup
                             android:id="@+id/radioGroup10"
@@ -522,26 +519,22 @@
                             <RadioButton
                                 android:id="@+id/radio10_1"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5x²y²"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio10_2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5xy²"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio10_3"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5x²y"/>
+                                android:layout_height="wrap_content"/>
 
                             <RadioButton
                                 android:id="@+id/radio10_4"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5x³y²"/>
+                                android:layout_height="wrap_content"/>
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

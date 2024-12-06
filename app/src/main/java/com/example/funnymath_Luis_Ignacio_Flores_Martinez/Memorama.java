@@ -13,8 +13,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.funnymath_Luis_Ignacio_Flores_Martinez.CardAdapter;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -26,6 +24,8 @@ public class Memorama extends Floating_button implements CardAdapter.OnCardClick
     private int firstSelectedPosition = -1;
     private int moves = 0;
     private TextView movesText;
+    private int points = 0; // Variable para la puntuación
+    private TextView pointsText; // TextView para mostrar la puntuación
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,8 @@ public class Memorama extends Floating_button implements CardAdapter.OnCardClick
 
         home_btn = findViewById(R.id.home_btn);
         menu2_btn = findViewById(R.id.menu2_btn);
+        movesText = findViewById(R.id.movesText);
+        pointsText = findViewById(R.id.points); // Inicializar el TextView de la puntuación
 
         home_btn.setOnClickListener(v -> goToActivity(BottomMenu.class));
 
@@ -44,7 +46,6 @@ public class Memorama extends Floating_button implements CardAdapter.OnCardClick
         menu2_btn.setOnClickListener(v -> goToActivity(Difference_squares.class));
 
         recyclerView = findViewById(R.id.recyclerView);
-        movesText = findViewById(R.id.movesText);
 
         initializeCards();
 
@@ -83,8 +84,6 @@ public class Memorama extends Floating_button implements CardAdapter.OnCardClick
         cards.add(new Card(6, "100 - b²", "(10+b)(10-b)"));
         cards.add(new Card(7, "x² - 36", "(x+6)(x-6)"));
         cards.add(new Card(8, "4y² - 25", "(2y+5)(2y-5)"));
-        cards.add(new Card(9, "121 - z²", "(11+z)(11-z)"));
-        cards.add(new Card(10, "x² - 144", "(x+12)(x-12)"));
 
         // Duplicar las cartas y mezclarlas
         List<Card> allCards = new ArrayList<>();
@@ -118,6 +117,8 @@ public class Memorama extends Floating_button implements CardAdapter.OnCardClick
             if (firstCard.getId() == selectedCard.getId()) {
                 firstCard.setMatched(true);
                 selectedCard.setMatched(true);
+                points += 10; // Aumenta la puntuación si se encuentra una pareja
+                pointsText.setText("Puntuación: " + points); // Actualiza el TextView de la puntuación
                 checkWinCondition();
             } else {
                 // Esperar 1 segundo antes de voltear las cartas
@@ -150,6 +151,9 @@ public class Memorama extends Floating_button implements CardAdapter.OnCardClick
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
+
+        TextView scoreText = dialogView.findViewById(R.id.scoreText); // Obtén la referencia al TextView del diálogo
+        scoreText.setText("Puntuación final: " + points); // Muestra la puntuación en el diálogo
 
         Button btnQuiz = dialogView.findViewById(R.id.btnQuiz);
         Button btnRestart = dialogView.findViewById(R.id.btnRestart);

@@ -3,226 +3,221 @@ package com.example.funnymath_Luis_Ignacio_Flores_Martinez;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 public class Common_factor_quizz extends AppCompatActivity {
 
-    private RadioGroup radioGroup1, radioGroup3, radioGroup4, radioGroup6, radioGroup8, radioGroup10;
-    private CheckBox[] question2Checks, question5Checks, question7Checks, question9Checks;
+    private RadioGroup[] radioGroups; // Array para almacenar los RadioGroups
     private Button submitButton;
     private int score = 0;
-
     private MediaPlayer correct, wrong;
+    private Random random = new Random();
+    private ArrayList<Question> questions;
+
+    private class Question {
+        String question;
+        ArrayList<String> options;
+        String correctAnswer;
+
+        Question(String question, ArrayList<String> options, String correctAnswer) {
+            this.question = question;
+            this.options = options;
+            this.correctAnswer = correctAnswer;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_factor_quizz);
 
-        SoundManager.getInstance().pauseMainSound();
+        submitButton = findViewById(R.id.submitButton);
 
-        SoundManager.getInstance().playQuizSound(this, R.raw.quiz);
+        submitButton.setEnabled(false);
 
-        correct = MediaPlayer.create(Common_factor_quizz.this, R.raw.correct);
-        wrong = MediaPlayer.create(Common_factor_quizz.this, R.raw.wrong);
 
         initializeViews();
-
-        // Configurar listeners para los RadioGroups
-        setupRadioGroupListener(radioGroup1, R.id.radio1_1); // 5xy
-        setupRadioGroupListener(radioGroup3, R.id.radio3_1); // 6x²y²
-        setupRadioGroupListener(radioGroup4, R.id.radio4_2); // 4x³
-        setupRadioGroupListener(radioGroup6, R.id.radio6_1); // 5x²y²
-        setupRadioGroupListener(radioGroup8, R.id.radio8_1); // 3xy²
-        setupRadioGroupListener(radioGroup10, R.id.radio10_1); // 5x²y²
-
-        // Configurar listeners para las preguntas de CheckBoxes
-        setupCheckBoxListener(question2Checks, new int[]{1, 3}); // Correctos: check2_2, check2_4
-        setupCheckBoxListener(question5Checks, new int[]{0, 1, 3}); // Correctos: check5_1, check5_2, check5_4
-        setupCheckBoxListener(question7Checks, new int[]{0, 2, 3}); // Correctos: check7_1, check7_3, check7_4
-        setupCheckBoxListener(question9Checks, new int[]{0, 1, 3}); // Correctos: check9_1, check9_2, check9_4
-
+        initializeQuestions();
+        updateViews();
+        setupRadioGroupListeners();
+        checkAllQuestionsAnswered();
         setupSubmitButton();
+
+        SoundManager.getInstance().pauseMainSound();
+        SoundManager.getInstance().playQuizSound(this, R.raw.quiz);
+        correct = MediaPlayer.create(this, R.raw.correct);
+        wrong = MediaPlayer.create(this, R.raw.wrong);
+    }
+
+    private void initializeQuestions() {
+        questions = new ArrayList<>();
+
+        // Generar 10 preguntas de opción única
+        for (int i = 0; i < 10; i++) {
+            Question q = generateSingleChoiceQuestion();
+            questions.add(q);
+        }
+    }
+
+    private Question generateSingleChoiceQuestion() {
+        int a = random.nextInt(10) + 1;
+        int b = random.nextInt(5) + 1;
+        int x = random.nextInt(3) + 1;
+        int y = random.nextInt(3) + 1;
+
+        String expression = String.format("%dx^%dy^%d + %dx^%dy^%d",
+                a * b, x + 1, y, a * 2 * b, x, y);
+        String correctAnswer = String.format("%dx^%dy^%d", b, x, y);
+
+        ArrayList<String> options = generateOptions(correctAnswer);
+
+        return new Question(
+                "¿Cuál es el factor común en la expresión: " + expression + "?",
+                options,
+                correctAnswer
+        );
+    }
+
+    private ArrayList<String> generateOptions(String correctAnswer) {
+        ArrayList<String> options = new ArrayList<>();
+        options.add(correctAnswer);
+
+        String[] parts = correctAnswer.split("x\\^|y\\^");
+        int coef = Integer.parseInt(parts[0]);
+        int xExp = Integer.parseInt(parts[1]);
+        int yExp = Integer.parseInt(parts[2]);
+
+        // Generar opciones incorrectas modificando coeficientes y exponentes
+        options.add(String.format("%dx^%dy^%d", coef + 1, xExp + 1, yExp));
+        options.add(String.format("%dx^%dy^%d", coef, xExp + 1, yExp + 1));
+        options.add(String.format("%dx^%dy^%d", coef - 1, xExp, yExp - 1));
+
+        Collections.shuffle(options);
+        return options;
+    }
+
+    private void updateRadioButtons(RadioGroup rg, ArrayList<String> options) {
+        if (rg != null) {
+            rg.removeAllViews();
+            for (int i = 0; i < options.size(); i++) {
+                RadioButton rb = new RadioButton(this);
+                rb.setText(options.get(i));
+                rb.setId(View.generateViewId());
+                rg.addView(rb);
+            }
+        } else {
+            Log.e("Common_factor_quizz", "RadioGroup es null");
+        }
+    }
+
+    private void updateViews() {
+        for (int i = 0; i < questions.size(); i++) {
+            Question q = questions.get(i);
+            TextView questionText = findViewById(getResources().getIdentifier(
+                    "question" + (i + 1), "id", getPackageName()));
+            questionText.setText(q.question);
+
+            RadioGroup rg = radioGroups[i]; // Obtener el RadioGroup del array
+            updateRadioButtons(rg, q.options);
+        }
     }
 
     private void initializeViews() {
-        // RadioGroups
-        radioGroup1 = findViewById(R.id.radioGroup1);
-        radioGroup3 = findViewById(R.id.radioGroup3);
-        radioGroup4 = findViewById(R.id.radioGroup4);
-        radioGroup6 = findViewById(R.id.radioGroup6);
-        radioGroup8 = findViewById(R.id.radioGroup8);
-        radioGroup10 = findViewById(R.id.radioGroup10);
+        radioGroups = new RadioGroup[10]; // Inicializar el array de RadioGroups
 
-        // CheckBoxes para pregunta 2
-        question2Checks = new CheckBox[]{
-                findViewById(R.id.check2_1),
-                findViewById(R.id.check2_2),
-                findViewById(R.id.check2_3),
-                findViewById(R.id.check2_4)
-        };
-
-        // CheckBoxes para pregunta 5
-        question5Checks = new CheckBox[]{
-                findViewById(R.id.check5_1),
-                findViewById(R.id.check5_2),
-                findViewById(R.id.check5_3),
-                findViewById(R.id.check5_4)
-        };
-
-        question7Checks = new CheckBox[]{
-                findViewById(R.id.check7_1),
-                findViewById(R.id.check7_2),
-                findViewById(R.id.check7_3),
-                findViewById(R.id.check7_4)
-        };
-
-        question9Checks = new CheckBox[]{
-                findViewById(R.id.check9_1),
-                findViewById(R.id.check9_2),
-                findViewById(R.id.check9_3),
-                findViewById(R.id.check9_4)
-        };
-
-        submitButton = findViewById(R.id.submitButton);
-    }
-
-    private void setupRadioGroupListener(RadioGroup radioGroup, int correctAnswerId) {
-        radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == correctAnswerId) {
-                playSound(R.raw.correct);
-                score++;
-            } else {
-                playSound(R.raw.wrong);
-            }
-        });
-    }
-
-    private void setupCheckBoxListener(CheckBox[] checkBoxes, int[] correctIndexes) {
-        for (CheckBox checkBox : checkBoxes) {
-            checkBox.setOnClickListener(v -> {
-                if (areCheckBoxAnswersCorrect(checkBoxes, correctIndexes)) {
-                    playSound(R.raw.correct);
-                    score++;
-                } else {
-                    playSound(R.raw.wrong);
-                }
+        // Obtener referencias a los RadioGroups del layout
+        for (int i = 0; i < 10; i++) {
+            radioGroups[i] = findViewById(getResources().getIdentifier(
+                    "radioGroup" + (i + 1), "id", getPackageName()));
+        }
+        for (RadioGroup rg : radioGroups) {
+            rg.setOnCheckedChangeListener((group, checkedId) -> {
+                checkAllQuestionsAnswered();
             });
         }
     }
 
-    private boolean areCheckBoxAnswersCorrect(CheckBox[] checkBoxes, int[] correctIndexes) {
-        for (int i = 0; i < checkBoxes.length; i++) {
-            boolean shouldBeChecked = contains(correctIndexes, i);
-            if (checkBoxes[i].isChecked() != shouldBeChecked) {
-                return false;
+    private void checkAllQuestionsAnswered() {
+        boolean allAnswered = true;
+        for (RadioGroup rg : radioGroups) {
+            if (rg.getCheckedRadioButtonId() == -1) {
+                allAnswered = false;
+                break;
             }
         }
-        return true;
-    }
-
-    private boolean contains(int[] array, int value) {
-        for (int i : array) {
-            if (i == value) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private void playSound(int soundResId) {
-        if (soundResId == R.raw.correct) {
-            correct.start();
-        } else {
-            wrong.start();
-        }
+        submitButton.setEnabled(allAnswered);
     }
 
     private void setupSubmitButton() {
         submitButton.setOnClickListener(v -> {
-            String quiz = "common_factor";
-
-            Intent intent = new Intent(Common_factor_quizz.this, Evaluating.class);
-            intent.putExtra("score", score); // Pasar la puntuación a la siguiente actividad
-            intent.putExtra("quiz_name", quiz); // Pasar el nombre del quiz
-            startActivity(intent);
-            finish();
+            checkAnswers();
         });
     }
 
     private void checkAnswers() {
         score = 0;
 
-        // Verificar pregunta 1 (RadioGroup)
-        if (radioGroup1.getCheckedRadioButtonId() == R.id.radio1_1) { // 5xy
-            score++;
-        }
+        for (int i = 0; i < questions.size(); i++) {
+            RadioGroup rg = radioGroups[i];
+            Question q = questions.get(i);
 
-        // Verificar pregunta 2 (CheckBoxes)
-        boolean q2correct = question2Checks[1].isChecked() &&
-                question2Checks[3].isChecked() &&
-                !question2Checks[0].isChecked() &&
-                !question2Checks[2].isChecked();
-        if (q2correct) score++;
-
-        // Verificar pregunta 3 (RadioGroup)
-        if (radioGroup3.getCheckedRadioButtonId() == R.id.radio3_1) { // 6x²y²
-            score++;
-        }
-
-        // Verificar pregunta 4 (RadioGroup)
-        if (radioGroup4.getCheckedRadioButtonId() == R.id.radio4_2) { // 4x³
-            score++;
-        }
-
-        // Verificar pregunta 5 (CheckBoxes)
-        boolean q5correct = question5Checks[0].isChecked() &&
-                question5Checks[1].isChecked() &&
-                !question5Checks[2].isChecked() &&
-                question5Checks[3].isChecked();
-        if (q5correct) score++;
-
-
-        if (radioGroup6.getCheckedRadioButtonId() == R.id.radio6_1) { // 5x²y²
-            score++;
-        }
-
-        // Verificar pregunta 7 (CheckBoxes)
-        boolean q7correct = question7Checks[0].isChecked() &&
-                !question7Checks[1].isChecked() &&
-                question7Checks[2].isChecked() &&
-                question7Checks[3].isChecked();
-        if (q7correct) score++;
-
-        // Verificar pregunta 8 (RadioGroup)
-        if (radioGroup8.getCheckedRadioButtonId() == R.id.radio8_1) { // 3xy²
-            score++;
-        }
-
-        // Verificar pregunta 9 (CheckBoxes)
-        boolean q9correct = question9Checks[0].isChecked() &&
-                question9Checks[1].isChecked() &&
-                !question9Checks[2].isChecked() &&
-                question9Checks[3].isChecked();
-        if (q9correct) score++;
-
-        // Verificar pregunta 10 (RadioGroup)
-        if (radioGroup10.getCheckedRadioButtonId() == R.id.radio10_1) { // 5x²y²
-            score++;
+            int selectedId = rg.getCheckedRadioButtonId();
+            if (selectedId != -1) {
+                RadioButton selectedRadioButton = findViewById(selectedId);
+                String selectedAnswer = selectedRadioButton.getText().toString();
+                if (selectedAnswer.equals(q.correctAnswer)) {
+                    score++;
+                }
+            }
         }
 
         String quiz = "common_factor";
-
         Intent intent = new Intent(Common_factor_quizz.this, Evaluating.class);
-        intent.putExtra("score", score); // Pasar la puntuación a la siguiente actividad
-        intent.putExtra("quiz_name", quiz); //Pasar el nombre del quiz
+        intent.putExtra("score", score);
+        intent.putExtra("quiz_name", quiz);
         startActivity(intent);
         finish();
+    }
+
+    private void setupRadioGroupListeners() {
+        for (int i = 0; i < radioGroups.length; i++) {
+            final int questionIndex = i; // Necesario para usar dentro del listener
+            radioGroups[i].setOnCheckedChangeListener((group, checkedId) -> {
+                checkAnswer(questionIndex, checkedId); // Llamar a checkAnswer con el índice de la pregunta
+                checkAllQuestionsAnswered();
+            });
+        }
+    }
+
+    private void checkAnswer(int questionIndex, int checkedId) {
+        Question q = questions.get(questionIndex);
+        RadioGroup rg = radioGroups[questionIndex];
+
+        int selectedId = rg.getCheckedRadioButtonId();
+        if (selectedId != -1) {
+            RadioButton selectedRadioButton = findViewById(selectedId);
+            String selectedAnswer = selectedRadioButton.getText().toString();
+            if (selectedAnswer.equals(q.correctAnswer)) {
+                playSound(R.raw.correct);
+            } else {
+                playSound(R.raw.wrong);
+            }
+        }
+    }
+
+    private void playSound(int soundResId) {
+        MediaPlayer soundPlayer = MediaPlayer.create(this, soundResId);
+        soundPlayer.setOnCompletionListener(MediaPlayer::release);
+        soundPlayer.start();
     }
 
     @Override
