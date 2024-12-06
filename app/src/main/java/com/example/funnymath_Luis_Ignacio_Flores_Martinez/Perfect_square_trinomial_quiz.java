@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class Perfect_square_trinomial_quiz extends AppCompatActivity {
+public class Perfect_square_trinomial_quiz extends Floating_button {
 
     private RadioGroup[] radioGroups;
     private Button submitButton;
@@ -40,6 +40,13 @@ public class Perfect_square_trinomial_quiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfect_square_trinomial_quiz);
+
+        home_btn = findViewById(R.id.home_btn);
+        menu2_btn = findViewById(R.id.menu2_btn);
+
+        home_btn.setOnClickListener(v -> goToActivity(BottomMenu.class));
+        menu2_btn.setIcon(R.drawable.evaluatin2);
+        menu2_btn.setOnClickListener(v -> goToActivity(Perfect_square_trinomial.class));
 
         initializeViews();
         initializeQuestions();

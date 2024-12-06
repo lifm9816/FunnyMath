@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class Common_factor_quizz extends AppCompatActivity {
+public class Common_factor_quizz extends Floating_button {
 
     private RadioGroup[] radioGroups; // Array para almacenar los RadioGroups
     private Button submitButton;
@@ -44,6 +44,12 @@ public class Common_factor_quizz extends AppCompatActivity {
 
         submitButton.setEnabled(false);
 
+        home_btn = findViewById(R.id.home_btn);
+        menu2_btn = findViewById(R.id.menu2_btn);
+
+        home_btn.setOnClickListener(v -> goToActivity(BottomMenu.class));
+        menu2_btn.setIcon(R.drawable.explaning);
+        menu2_btn.setOnClickListener(v -> goToActivity(Common_factor.class));
 
         initializeViews();
         initializeQuestions();
