@@ -15,7 +15,7 @@ public class Quiz_result extends AppCompatActivity {
 
     private ImageView resultImage;
     private TextView resultMessage, resultText;
-    private Button nextSectionButton, repeatQuizButton;
+    private Button nextSectionButton, repeatQuizButton, mainMenu;
     private String quiz;
     private int score;
 
@@ -32,6 +32,7 @@ public class Quiz_result extends AppCompatActivity {
         resultText = findViewById(R.id.result);
         nextSectionButton = findViewById(R.id.nextSection);
         repeatQuizButton = findViewById(R.id.repeatQuiz);
+        mainMenu = findViewById(R.id.mainmenu);
 
         score = getIntent().getIntExtra("score", 0); // Obtener la puntuación
         quiz = getIntent().getStringExtra("quiz_name");
@@ -39,6 +40,14 @@ public class Quiz_result extends AppCompatActivity {
 
         nextSectionButton.setOnClickListener(v -> goSection(quiz, score, congrats));
         repeatQuizButton.setOnClickListener(v -> goSection(quiz, score, failed));
+        mainMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Quiz_result.this, BottomMenu.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         // Configurar la vista según la puntuación
         if (score >= 7) { // Aprobar
