@@ -91,44 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                app:cardCornerRadius="200dp">
-
-                <ImageView
-                    android:layout_width="220dp"
-                    android:layout_height="220dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/christian"/>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Christian Iván Rodríguez Olarte"
-                android:textSize="18sp"
-                android:textColor="@color/white"
-                android:layout_marginTop="7dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Frontend Developer"
-                android:textSize="18sp"
-                android:textColor="@color/white"
-                android:layout_marginTop="7dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="222 548 6470"
-                android:textSize="18sp"
-                android:textColor="@color/white"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="50dp"/>
-
+                app:cardCornerRadius="200dp"/>
 
 
         </LinearLayout>
